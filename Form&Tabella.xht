@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><title>Grafico</title>
+
+<script language="javascript" src="Javascript_array.js">
+</script>
+<link rel="stylesheet" href="foglioCSS.css" type="text/css" />
+<input />
+</head>
+<body>
+<div style="background-color: red;" id="titolo">&nbsp;
+&nbsp;PROGETTO DI INFORMATICA &nbsp;- &nbsp;CREAZIONE DEL
+GRAFICO</div>
+<br />
+<p class="info"><span>Seguire le istruzioni
+date, facendo attenzione alla compilazione dei
+valori e alle opzioni da spuntare.</span><br />
+</p>
+<form>
+<div id="istruzioni">Innanzi
+tutto, abbiamo bisogno di alcune informazioni
+preliminari.<br style="font-family: Calibri;" />
+<ul>
+<li>Quante
+serie si
+vogliono includere nel grafico? (è possibile fare solo
+una
+scelta)</li>
+</ul>
+<div style="margin-left: 40px;">&nbsp;<input tabindex="1" value="s1" name="NumSerie" onclick="as1()" type="radio" />1&nbsp;
+<br />
+</div>
+<div style="margin-left: 40px;">&nbsp;<input tabindex="2" value="s2" name="NumSerie" onclick="as2()" type="radio" />2<br />
+</div>
+<div style="margin-left: 40px;">&nbsp;<input tabindex="3" value="s3" name="NumSerie" onclick="as3()" type="radio" />3<br />
+</div>
+<p class="nb">Se&nbsp;un valore è nullo o
+inesistente, o se per caso la
+serie include meno di otto valori, compilare la tabella solo per i
+valori esistenti e non nulli.&nbsp;<br />
+Nel caso di due o più serie,
+si creerà un
+grafico contenente più serie a torta concentriche: la più esterna è
+sempre la prima.<br />
+I
+colori con cui sono rappresentati i singoli valori nel grafico sono
+indicati dal colore con cui compaiono i dati stessi nella tabella.
+&nbsp; </p>
+<ul>
+<li>Inserire
+negli
+appositi spazi i valori da includere nel grafico.</li>
+</ul>
+<table style="background-color: white; width: 100%; height: 50%; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="height: 10%; width: 10%;"><br />
+</td>
+<td style="height: 10%; width: 15%;" class="info">serie
+1&nbsp;</td>
+<td style="height: 10%; width: 15%;" class="info">serie
+2</td>
+<td style="height: 10%; width: 15%;" class="info">serie
+3</td>
+<td rowspan="9" colspan="1" style="height: 50%; width: 50%; text-align: center;">
+<canvas id="canvasAreo" width="635" height="400">Attenzione:il
+tuo browser
+non supporta il
+tag
+CANVAS. </canvas> <br />
+</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 637px;" class="info">valore 1</td>
+<td style="width: 388px;" colspan="1" rowspan="1"><input style="color: rgb(255, 0, 0);" onchange="attenzione()" value="0" name="v1" tabindex="4" size="3" maxlength="5" id="val1" />&nbsp;</td>
+<td colspan="1"><input onchange="attenzione()" style="color: rgb(255, 0, 0);" name="v9" value="0" size="3" maxlength="5" id="val9" tabindex="12" /></td>
+<td colspan="1"><input onchange="attenzione()" style="color: rgb(255, 0, 0);" value="0" name="v17" size="3" maxlength="5" id="val17" tabindex="20" /></td>
+</tr>
+<tr>
+<td style="text-align: center; width: 637px;" class="info">valore 2</td>
+<td style="width: 388px;"><input onchange="attenzione()" value="0" name="v2" size="3" maxlength="5" id="val2" tabindex="5" style="color: rgb(255, 165, 0);" /></td>
+<td><input onchange="attenzione()" style="color: rgb(255, 165, 0);" value="0" name="v10" size="3" maxlength="5" id="val10" tabindex="13" /></td>
+<td><input onchange="attenzione()" style="color: rgb(255, 165, 0);" value="0" name="v18" size="3" maxlength="5" id="val18" tabindex="21" /></td>
+</tr>
+<tr>
+<td style="text-align: center; width: 637px;" class="info">valore 3</td>
+<td style="width: 388px;"><input onchange="attenzione()" style="color: rgb(255, 255, 0);" value="0" name="v3" size="3" maxlength="5" id="val3" tabindex="6" /></td>
+<td><input onchange="attenzione()" style="color: rgb(255, 255, 0);" value="0" name="v11" size="3" maxlength="5" id="val11" tabindex="14" /></td>
+<td><input onchange="attenzione()" style="color: rgb(255, 255, 0);" value="0" name="v19" size="3" maxlength="5" id="val19" tabindex="22" /></td>
+</tr>
+<tr>
+<td style="text-align: center; width: 637px;" class="info">valore 4</td>
+<td style="width: 388px;"><input onchange="attenzione()" style="color: rgb(173, 255, 47);" value="0" name="v4" size="3" maxlength="5" id="val4" tabindex="7" /></td>
+<td><input onchange="attenzione()" style="color: rgb(173, 255, 0);" value="0" name="v12" size="3" maxlength="5" id="val12" tabindex="15" /></td>
+<td><input onchange="attenzione()" style="color: rgb(173, 255, 0);" value="0" name="v20" size="3" maxlength="5" id="val20" tabindex="23" /></td>
+</tr>
+<tr>
+<td style="text-align: center; width: 637px;" class="info">valore 5</td>
+<td style="width: 388px;"><input onchange="attenzione()" style="color: rgb(0, 255, 127);" value="0" name="v5" size="3" maxlength="5" id="val5" tabindex="8" /></td>
+<td><input onchange="attenzione()" style="color: rgb(0, 255, 127);" value="0" name="v13" size="3" maxlength="5" id="val13" tabindex="16" /></td>
+<td><input onchange="attenzione()" style="color: rgb(0, 255, 127);" value="0" name="v21" size="3" maxlength="5" id="val21" tabindex="24" /></td>
+</tr>
+<tr>
+<td style="text-align: center; width: 637px;" class="info">valore 6</td>
+<td style="width: 388px;"><input onchange="attenzione()" style="color: rgb(135, 206, 250);" value="0" name="v6" size="3" maxlength="5" id="val6" tabindex="9" /></td>
+<td><input onchange="attenzione()" style="color: rgb(135, 206, 250);" value="0" name="v14" size="3" maxlength="5" id="val14" tabindex="17" /></td>
+<td><input onchange="attenzione()" style="color: rgb(135, 206, 250);" value="0" name="v22" size="3" maxlength="5" id="val22" tabindex="25" /></td>
+</tr>
+<tr>
+<td style="text-align: center; width: 637px;" class="info">valore 7</td>
+<td style="width: 388px;"><input onchange="attenzione()" style="color: rgb(70, 130, 180);" value="0" name="v7" size="3" maxlength="5" id="val7" tabindex="10" /></td>
+<td><input onchange="attenzione()" style="color: rgb(70, 130, 180);" value="0" name="v15" size="3" maxlength="5" id="val15" tabindex="18" /></td>
+<td><input onchange="attenzione()" style="color: rgb(70, 130, 180);" value="0" name="v23" size="3" maxlength="5" id="val23" tabindex="26" /></td>
+</tr>
+<tr>
+<td style="text-align: center; width: 637px;" class="info">valore 8</td>
+<td style="width: 388px;"><input onchange="attenzione()" style="color: rgb(255, 0, 255);" value="0" name="v8" size="3" maxlength="5" id="val8" tabindex="11" /></td>
+<td><input onchange="attenzione()" style="color: rgb(255, 0, 255);" value="0" name="v16" size="3" maxlength="5" id="val16" tabindex="19" /></td>
+<td><input onchange="attenzione()" style="color: rgb(255, 0, 255);" value="0" name="v24" size="3" maxlength="5" id="val24" tabindex="27" /></td>
+</tr>
+<tr>
+<td style="text-align: left; width: 637px;" rowspan="1" colspan="1">&nbsp;</td>
+<td rowspan="1" colspan="3" style="width: 388px;"><input name="Crea Serie" id="btnOK" value="Crea Serie" tabindex="28" onclick="creaAreo()" type="button" />&nbsp;<input onclick="Messaggio()" value="Cancella Dati" name="Annulla" tabindex="29" type="reset" />&nbsp;&nbsp;&nbsp;</td>
+<td><input name="Annulla grafico" id="btnOK" value="Cancella Grafico" onclick="bianco()" tabindex="30" type="button" /></td>
+</tr>
+</tbody>
+</table>
+<br />
+Salva i dati
+utilizzati: <input name="Salva" value="Salva" onclick="SalvaDati()" tabindex="31" type="button" />
+<br />
+Visualizza i dati in
+una tabella: <a href="StoricoInterazioni.html"><input name="Tabella" value="Dati" tabindex="32" type="button" /></a><span style="text-decoration: underline;"></span> <br />
+<br />
+<a href="Presentazione.xht"><input value="Home" name="H" type="button" /></a><br />
+<br /><br />
+</div>
+</form>
+<div id="footer2">
+<br />
+</div>
+</body>
+</html>
